@@ -30,10 +30,12 @@ module.exports = {
   },
   module: {
     rules: [
+      //styling loaders
       {
         test: /\.scss$/,
         use: ["style-loader", "css-loader", "sass-loader"],
       },
+      // babel loader for js files for browser backward compatible
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -44,6 +46,7 @@ module.exports = {
           },
         },
       },
+      //asset loader for images
       {
         test: /\.(png|svg|jpeg|jpg|gif)$/i,
         type: "asset/resource",

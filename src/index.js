@@ -5,4 +5,6 @@ import laughing from "./assets/photo.jpg";
 const laughImg = document.getElementById("laughImg");
 laughImg.src = laughing;
 
-console.log(generateJoke());
+document.getElementById("jokeBtn").addEventListener("click", generateJoke);
+
+generateJoke();
