@@ -13,6 +13,8 @@ module.exports = {
     filename: "[name][contenthash].js",
     //so that it creates only one js bundle in dist
     clean: true,
+    //so that image name stays same from assets
+    assetModuleFilename: "[name][ext]",
   },
   //will show the error in source code from production code now
   devtool: "source-map",
@@ -41,6 +43,10 @@ module.exports = {
             presets: ["@babel/preset-env"],
           },
         },
+      },
+      {
+        test: /\.(png|svg|jpeg|jpg|gif)$/i,
+        type: "asset/resource",
       },
     ],
   },
