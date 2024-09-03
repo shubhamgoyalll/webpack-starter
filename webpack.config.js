@@ -1,4 +1,6 @@
 const path = require("path");
+// with this we can even delete the dist folder and it will rebuild that
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -17,4 +19,10 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: "Webpack App",
+      filename: "index.html",
+    }),
+  ],
 };
